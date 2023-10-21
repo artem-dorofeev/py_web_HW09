@@ -1,0 +1,16 @@
+[tool.poetry]
+name = "py-web-hw09"
+version = "0.1.0"
+description = ""
+authors = ["Artem Dorofeev <130536391+artem-dorofeev@users.noreply.github.com>"]
+readme = "README.md"
+
+[tool.poetry.dependencies]
+python = "^3.12"
+scrapy = "^2.11.0"
+mongoengine = "^0.27.0"
+
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
