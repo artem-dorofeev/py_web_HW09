@@ -13,6 +13,7 @@ qoutes_file = config.get('URL', 'qoutes_file')
 
 def parser_url(url: str):
     response = requests.get(url)
+    soup = BeautifulSoup(response.text, 'lxml')
     quotes = soup.find_all('span', class_='text')
     authors = soup.find_all('small', class_='author')
     tags = soup.find_all('div', class_='tags')
@@ -71,13 +72,13 @@ def add_to_json(file: str, data: list):
 # print(data_list)
 
 if __name__ == "__main__":
-    response = requests.get(url_pars)
-    soup = BeautifulSoup(response.text, 'lxml')
-    quotes = soup.find_all('span', class_='text')
-    authors = soup.find_all('small', class_='author')
-    tags = soup.find_all('div', class_='tags')
+    # response = requests.get(url_pars)
+    # soup = BeautifulSoup(response.text, 'lxml')
+    # quotes = soup.find_all('span', class_='text')
+    # authors = soup.find_all('small', class_='author')
+    # tags = soup.find_all('div', class_='tags')
 
     # main()
-    # q, a, t = parser_url(url_pars)
-    data_for_json = create_quotes_data(authors, quotes, tags)
+    q, a, t = parser_url(url_pars)
+    data_for_json = create_quotes_data(a, q, t)
     add_to_json(qoutes_file, data_for_json)
