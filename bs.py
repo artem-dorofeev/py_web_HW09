@@ -10,7 +10,7 @@ quotes = soup.find_all('span', class_='text')
 authors = soup.find_all('small', class_='author')
 tags = soup.find_all('div', class_='tags')
 
-data = {}
+data_list = []
 for i in range(0, len(quotes)):
     tag = []
     print('+' * 10)
@@ -26,9 +26,9 @@ for i in range(0, len(quotes)):
         "Author": author,
         "quote": quote,
         "tag": tag
-    }
-
+        }
+    data_list.append(data)
     with open("quotes1.json", "w", encoding="utf-8") as fd:
-        json.dump(data, fd, ensure_ascii=False)
+        json.dump(data_list, fd, ensure_ascii=False)
 
-print(data)
+print(data_list)
