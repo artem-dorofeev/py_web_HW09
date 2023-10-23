@@ -1,12 +1,12 @@
 [tool.poetry]
 name = "py-web-hw09"
 version = "0.1.0"
-description = ""
+description = "Python web HW09"
 authors = ["Artem Dorofeev <130536391+artem-dorofeev@users.noreply.github.com>"]
 readme = "README.md"
 
 [tool.poetry.dependencies]
-python = "^3.12"
+python = "^3.11"
 scrapy = "^2.11.0"
 mongoengine = "^0.27.0"
 
